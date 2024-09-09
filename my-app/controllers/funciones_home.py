@@ -91,6 +91,7 @@ def sql_lista_empleadosBD():
                         CASE
                             WHEN e.sexo_empleado = 1 THEN 'Masculino'
                             ELSE 'Femenino'
+                            
                         END AS sexo_empleado
                     FROM tbl_empleados AS e
                     ORDER BY e.id_empleado DESC
