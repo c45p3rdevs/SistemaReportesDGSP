@@ -131,8 +131,19 @@ def sql_detalles_empleadosBD(idEmpleado):
                         e.apellido_empleado,
                         e.salario_empleado,
                         CASE
-                            WHEN e.sexo_empleado = 1 THEN 'Masculino'
-                            ELSE 'Femenino'
+                           WHEN e.sexo_empleado = 1 THEN 'Acambaro' 
+                            WHEN e.sexo_empleado = 2 THEN 'Celaya' 
+                            WHEN e.sexo_empleado = 3 THEN 'Guanajuato' 
+                            WHEN e.sexo_empleado = 4 THEN 'Irapuato' 
+                            WHEN e.sexo_empleado = 5 THEN 'Leon' 
+                            WHEN e.sexo_empleado = 6 THEN 'Penjamo' 
+                            WHEN e.sexo_empleado = 7 THEN 'Salamanca' 
+                            WHEN e.sexo_empleado = 8 THEN 'San Felipe' 
+                            WHEN e.sexo_empleado = 9 THEN 'San Miguel' 
+                            WHEN e.sexo_empleado = 10 THEN 'Valle1' 
+                            WHEN e.sexo_empleado = 11 THEN 'Valle2' 
+                            WHEN e.sexo_empleado = 12 THEN 'Valle3'
+                            ELSE 'Acambaro'
                         END AS sexo_empleado,
                         e.telefono_empleado, 
                         e.email_empleado,
@@ -201,7 +212,7 @@ def generarReporteExcel():
 
     # Agregar la fila de encabezado con los títulos
     cabeceraExcel = ("NombreEmpleado", "Apellido", "CentroReportante",
-                     "Extension", "Email", "DetalleReporte", "Prioridad", "Fecha de CreacionReporte")
+                     "Proveedor", "Email", "DetalleReporte", "Prioridad", "Fecha de CreacionReporte")
    
 
     hoja.append(cabeceraExcel)

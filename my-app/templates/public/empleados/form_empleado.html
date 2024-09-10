@@ -76,7 +76,7 @@
             </div>
             <div class="col-md-6">
               <label for="telefono_empleado" class="form-label">
-                Extension del Empleado
+                PROVEEDOR
               </label>
               <input
                 class="form-control"
@@ -102,7 +102,7 @@
                 Detalle del reporte
               </label>
               <input
-                class="form-control"
+                class="form-control form-control-lg"
                 type="text"
                 name="profesion_empleado"
                 required />
@@ -129,8 +129,9 @@
                 <div class="avatar-edit">
                   <input
                     type="file"
-                    name="foto_empleado"
+                    name="foto_empleado" multiple
                     id="imageUpload"
+                    enctype="multipart/form-data"
                     accept=".png, .jpg, .jpeg" />
                   <label for="imageUpload"><i class="bi bi-pen"></i></label>
                 </div>
