@@ -111,7 +111,7 @@ def borrarUsuario(id):
 def borrarEmpleado(id_empleado, foto_empleado):
     resp = eliminarEmpleado(id_empleado, foto_empleado)
     if resp:
-        flash('El Empleado fue eliminado correctamente', 'success')
+        flash('El Reporte fue eliminado correctamente', 'success')
         return redirect(url_for('lista_empleados'))
 
 

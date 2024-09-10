@@ -13,7 +13,7 @@ function fadeOut(element) {
 fadeOut(loaderOut);
 
 function eliminarEmpleado(id_empleado, foto_empleado) {
-  if (confirm("¿Estas seguro que deseas Eliminar el empleado?")) {
+  if (confirm("¿Estas seguro que deseas Eliminar el reporte?")) {
     let url = `/borrar-empleado/${id_empleado}/${foto_empleado}`;
     if (url) {
       window.location.href = url;

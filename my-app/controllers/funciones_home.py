@@ -168,8 +168,19 @@ def empleadosReporte():
                         e.profesion_empleado,
                         DATE_FORMAT(e.fecha_registro, '%d de %b %Y %h:%i %p') AS fecha_registro,
                         CASE
-                            WHEN e.sexo_empleado = 1 THEN 'Masculino'
-                            ELSE 'Femenino'
+                            WHEN e.sexo_empleado = 1 THEN 'Acambaro' 
+                            WHEN e.sexo_empleado = 2 THEN 'Celaya' 
+                            WHEN e.sexo_empleado = 3 THEN 'Guanajuato' 
+                            WHEN e.sexo_empleado = 4 THEN 'Irapuato' 
+                            WHEN e.sexo_empleado = 5 THEN 'Leon' 
+                            WHEN e.sexo_empleado = 6 THEN 'Penjamo' 
+                            WHEN e.sexo_empleado = 7 THEN 'Salamanca' 
+                            WHEN e.sexo_empleado = 8 THEN 'San Felipe' 
+                            WHEN e.sexo_empleado = 9 THEN 'San Miguel' 
+                            WHEN e.sexo_empleado = 10 THEN 'Valle1' 
+                            WHEN e.sexo_empleado = 11 THEN 'Valle2' 
+                            WHEN e.sexo_empleado = 12 THEN 'Valle3'
+                            ELSE 'Acambaro'
                         END AS sexo_empleado
                     FROM tbl_empleados AS e
                     ORDER BY e.id_empleado DESC
@@ -191,11 +202,14 @@ def generarReporteExcel():
     # Agregar la fila de encabezado con los títulos
     cabeceraExcel = ("NombreEmpleado", "Apellido", "CentroReportante",
                      "Extension", "Email", "DetalleReporte", "Prioridad", "Fecha de CreacionReporte")
+   
 
     hoja.append(cabeceraExcel)
+    
+   
 
     # Formato para números en moneda colombiana y sin decimales
-    formato_moneda_colombiana = '#,##0'
+    #formato_moneda_colombiana = '#,##0'
 
     # Agregar los registros a la hoja
     for registro in dataEmpleados:
@@ -216,10 +230,10 @@ def generarReporteExcel():
         for fila_num in range(2, hoja.max_row + 1):
             columna = 7  # Columna G
             celda = hoja.cell(row=fila_num, column=columna)
-            celda.number_format = formato_moneda_colombiana
+            #celda.number_format = formato_moneda_colombiana
 
     fecha_actual = datetime.datetime.now()
-    archivoExcel = f"Reporte_empleados_{fecha_actual.strftime('%Y_%m_%d')}.xlsx"
+    archivoExcel = f"Reportes_DGSP_{fecha_actual.strftime('%Y_%m_%d')}.xlsx"
     carpeta_descarga = "../static/downloads-excel"
     ruta_descarga = os.path.join(os.path.dirname(
         os.path.abspath(__file__)), carpeta_descarga)
