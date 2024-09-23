@@ -212,7 +212,7 @@ def generarReporteExcel():
 
     # Agregar la fila de encabezado con los títulos
     cabeceraExcel = ("NombreEmpleado", "Apellido", "CentroReportante",
-                     "Proveedor", "Email", "DetalleReporte", "Prioridad", "Fecha de CreacionReporte")
+                     "Proveedor", "Email", "DetalleReporte", "TipoProyecto", "Fecha de CreacionReporte")
    
 
     hoja.append(cabeceraExcel)
