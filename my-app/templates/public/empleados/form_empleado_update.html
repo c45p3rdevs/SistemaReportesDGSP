@@ -53,16 +53,21 @@
                 class="form-control"
                 required />
             </div>
+            
             <div class="col-md-6">
               <label for="apellido_empleado" class="form-label">
-                Apellido del empleado
+                Tipo de Proyecto
               </label>
-              <input
-                class="form-control"
-                type="text"
-                name="apellido_empleado"
-                value="{{ respuestaEmpleado.apellido_empleado }}"
-                required />
+              {% with tipo_sexo = {"ADUANAS": "ADUANAS", "INHIBIDORES": "INHIBIDORES", "TELEFONIA PPLS": "TELEFONIA PPLS", "CCTV": "CCTV", "OTRO": "OTRO"} %}
+              <select class="form-select" name="apellido_empleado">
+                {% for clave, valor in tipo_sexo.items() %} {% if clave ==
+                respuestaEmpleado.apellido_empleado|string %}
+                <option value="{{ clave }}" selected>{{ valor }}</option>
+                {% else %}
+                <option value="{{ clave }}">{{ valor }}</option>
+                {% endif %} {% endfor %}
+              </select>
+              {% endwith %}
             </div>
           </div>
 
