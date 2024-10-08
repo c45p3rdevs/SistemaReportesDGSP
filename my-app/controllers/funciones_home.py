@@ -30,7 +30,7 @@ def procesar_form_empleado(dataForm, foto_perfil):
         with connectionBD() as conexion_MySQLdb:
             with conexion_MySQLdb.cursor(dictionary=True) as cursor:
 
-                sql = "INSERT INTO tbl_empleados (nombre_empleado, apellido_empleado, sexo_empleado, telefono_empleado, email_empleado, profesion_empleado, foto_empleado, salario_empleado, descripcion) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
+                sql = "INSERT INTO tbl_empleados (nombre_empleado, apellido_empleado, sexo_empleado, telefono_empleado, email_empleado, profesion_empleado, descripcion, foto_empleado, salario_empleado) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
 
                 # Creando una tupla con los valores del INSERT
                 valores = (dataForm['nombre_empleado'], dataForm['apellido_empleado'], dataForm['sexo_empleado'],
