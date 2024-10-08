@@ -58,7 +58,7 @@
               <td width="10px">
                 <a
                   href="/detalles-empleado/{{ empleado.id_empleado }}"
-                  title="Ver envio"
+                  title="Ver reporte"
                   type="button"
                   class="btn btn-info btn-sm"
                   data-bs-toggle="tooltip"
@@ -72,6 +72,7 @@
                 <a
                   href="{{ url_for('viewEditarEmpleado', id = empleado.id_empleado) }}"
                   class="btn btn-success btn-sm"
+                  title="Actualizar reporte"
                   tooltip="Actualizar Registro">
                   <i class="bi bi-arrow-clockwise"></i>
                   Actualizar
