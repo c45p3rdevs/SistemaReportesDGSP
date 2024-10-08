@@ -36,7 +36,9 @@
               <th>Nombre</th>
               <th>Tipo de Proyecto</th>
               <th>Centro</th>
+              <th>Descripcion</th>
               <th>Prioridad </th>
+              
               <th>Acción</th>
             </tr>
           </thead>
@@ -47,10 +49,12 @@
               <td>{{ empleado.nombre_empleado }}</td>
               <td>{{ empleado.apellido_empleado }}</td>
               <td>{{ empleado.sexo_empleado }}</td>
+              <td>{{ empleado.descripcion }}</td>
               <td>
                $ {{ '{:,.0f}'.format(empleado.salario_empleado).replace(',',
                 '.')}}
               </td>
+              
               <td width="10px">
                 <a
                   href="/detalles-empleado/{{ empleado.id_empleado }}"
